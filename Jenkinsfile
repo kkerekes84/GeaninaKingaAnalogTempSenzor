@@ -6,8 +6,9 @@ node {
       sh '''
          
          
-         cp ../src/analog_temp.py
+         
          zip analog_temp.zip analog_temp.py
+         fileOperations([fileCopyOperation(excludes: '', flattenFiles: false, includes: '*.py', targetLocation: '/home/pi/Desktop/GeaninaKingaPipelineWithAzure')])
       '''
    }
    stage('deploy') {
