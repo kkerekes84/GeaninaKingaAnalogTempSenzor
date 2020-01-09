@@ -5,7 +5,7 @@ node {
    stage('build') {
       sh '''
          
-         cd target
+         
          cp ../src/analog_temp.py
          zip analog_temp.zip analog_temp.py
       '''
