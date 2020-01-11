@@ -5,12 +5,13 @@ node {
    }
    
    stage('test') {
-      sh 'python /home/pi/Desktop/GeaninaKingaPipelineWithAzure/test2.py'
+      sh 'python /home/pi/Desktop/GeaninaKingaPipelineWithAzure/test.py'
    } 
    stage('build') {
       sh '''
   
          zip analog_temp.zip analog_temp.py
+         zip analog_temp_mqtt.zip analog_temp_senzor_mqtt.py
         
       '''
    }
@@ -18,5 +19,6 @@ node {
       
       azureWebAppPublish azureCredentialsId: env.AZURE_CRED_ID,
       resourceGroup: env.RES_GROUP, appName: env.WEB_APP, filePath: "**/analog_temp.zip"
+      resourceGroup: env.RES_GROUP, appName: env.WEB_APP, filePath: "**/analog_temp_mqtt.zip"
    }
 }
