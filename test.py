@@ -1,5 +1,5 @@
 import unittest
-import analog_temp.py
+import analog_temp
 
 class TestTemp(unittest.TestCase):
       def test_temp(self):
