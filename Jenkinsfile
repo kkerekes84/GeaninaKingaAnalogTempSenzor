@@ -4,7 +4,7 @@ node {
    }
    
    stage('test') {
-      sh 'python test.py'
+      sh 'python test2.py'
    } 
    stage('build') {
       sh '''
