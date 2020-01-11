@@ -1,5 +1,5 @@
 import unittest
-import analog_temp
+import analog_temp_senzor_mqtt
 
 class TestTemp(unittest.TestCase):
       def test_temp(self):
