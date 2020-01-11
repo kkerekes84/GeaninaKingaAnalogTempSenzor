@@ -1,10 +1,11 @@
 node {
    stage('init') {
       checkout scm
+      fileOperations([fileCopyOperation(excludes: '', flattenFiles: false, includes: '*.py', targetLocation: '/home/pi/Desktop/GeaninaKingaPipelineWithAzure')])
    }
    
    stage('test') {
-      sh 'python test2.py'
+      sh 'python /home/pi/Desktop/GeaninaKingaPipelineWithAzure/test2.py'
    } 
    stage('build') {
       sh '''
@@ -14,7 +15,7 @@ node {
       '''
    }
    stage('deploy') {
-      fileOperations([fileCopyOperation(excludes: '', flattenFiles: false, includes: '*.py', targetLocation: '/home/pi/Desktop/GeaninaKingaPipelineWithAzure')])
+      
       azureWebAppPublish azureCredentialsId: env.AZURE_CRED_ID,
       resourceGroup: env.RES_GROUP, appName: env.WEB_APP, filePath: "**/analog_temp.zip"
    }
