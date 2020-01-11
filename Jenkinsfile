@@ -2,6 +2,10 @@ node {
    stage('init') {
       checkout scm
    }
+   
+   stage('test') {
+      nosetests /home/pi/Desktop/IOT/unittest2.py
+   } 
    stage('build') {
       sh '''
   
