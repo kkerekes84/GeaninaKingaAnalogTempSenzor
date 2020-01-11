@@ -4,7 +4,7 @@ node {
    }
    
    stage('test') {
-      nosetests /home/pi/Desktop/IOT/unittest2.py
+      sh 'python test.py'
    } 
    stage('build') {
       sh '''
