@@ -4,9 +4,7 @@ node {
       fileOperations([fileCopyOperation(excludes: '', flattenFiles: false, includes: '*.py', targetLocation: '/home/pi/Desktop/GeaninaKingaPipelineWithAzure')])
    }
    
-   stage('test') {
-      sh 'python /home/pi/Desktop/GeaninaKingaPipelineWithAzure/test.py'
-   } 
+ 
    stage('build') {
       sh '''
   
