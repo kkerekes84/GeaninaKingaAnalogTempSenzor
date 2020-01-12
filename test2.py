@@ -6,5 +6,5 @@ class TestTemp(unittest.TestCase):
           self.assertGreaterEqual(analog_temp.mcp.read_adc(0),200)
            
 
-if _name__=="__main_":
+if __name__=="__main_":
     unittest.main()
