@@ -6,7 +6,7 @@ node {
    
    stage('test') {
       sh 'python /home/pi/Desktop/GeaninaKingaPipelineWithAzure/test.py'
- 
+   }
    stage('build') {
       sh '''
   
