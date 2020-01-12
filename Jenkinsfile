@@ -5,7 +5,7 @@ node {
    }
    
    stage('test') {
-      sh 'python /var/lib/jenkins/workspace/GeaninaKingaPipelineWithAzure/test2.py'
+      sh 'sudo python /var/lib/jenkins/workspace/GeaninaKingaPipelineWithAzure/test2.py'
    }
    stage('build') {
       sh '''
