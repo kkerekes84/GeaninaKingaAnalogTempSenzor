@@ -25,7 +25,7 @@ print('Reading Analog Temperature sensor values values, press Ctrl-C to quit...'
 # Main program.
 
     
-print "---------------------------
+print "---------------------------"
 print "Analog port 0"
 analog0_value = mcp.read_adc(0)
 voltage = analog0_value * 3.3
