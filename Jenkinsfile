@@ -2,7 +2,7 @@ node {
    stage('init') {
       checkout scm
       fileOperations([fileCopyOperation(excludes: '', flattenFiles: false, includes: '*.py', targetLocation: '/home/pi/Desktop/GeaninaKingaPipelineWithAzure')])
-      sh ' chmod +x /home/pi/Desktop/GeaninaKingaPipelineWithAzure/*'
+      sh ' sudo chmod +x /home/pi/Desktop/GeaninaKingaPipelineWithAzure/*'
    }
    
    stage('test') {
