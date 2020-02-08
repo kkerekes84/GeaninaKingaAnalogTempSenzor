@@ -7,6 +7,7 @@ node {
    
    stage('test') {
       sh 'sudo python /home/pi/Desktop/GeaninaKingaPipelineWithAzure/test2.py'
+      sh 'sudo python /home/pi/Desktop/GeaninaKingaPipelineWithAzure/test.py'
    }
    stage('build') {
       sh '''
@@ -20,6 +21,7 @@ node {
       
       azureWebAppPublish azureCredentialsId: env.AZURE_CRED_ID,
       resourceGroup: env.RES_GROUP, appName: env.WEB_APP, filePath: "**/analog_temp.zip"
+      resourceGroup: env.RES_GROUP, appName: env.WEB_APP, filePath: "**/analog_temp_mqtt.zip"
       
    }
 }
